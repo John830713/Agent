@@ -1,0 +1,9 @@
+# mneme data directory (user-specific, not project data)
+.mneme/
+
+# mneme binary (download from releases)
+mneme.exe
+
+# OS files
+Thumbs.db
+.DS_Store
