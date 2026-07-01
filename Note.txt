@@ -1,0 +1,13 @@
+# 1. init
+D:\Agent\mneme.exe init
+D:\Agent\mneme.exe init opencode
+
+# 2. fix opencode.json for Windows
+# (sed/replace "[\"mneme\", \"client\"]" → "[\"D:\\Agent\\mneme.exe\", \"run\"]")
+# (add timeout)
+
+# 3. clean lock
+Remove-Item -Force "$env:USERPROFILE\.mneme\.lock" -ErrorAction SilentlyContinue
+
+# 4. restart (manual, since taskkill unreliable)
+Write-Host "Restart OpenCode manually now"
