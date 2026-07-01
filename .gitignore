@@ -1,8 +1,8 @@
 # mneme data directory (user-specific, not project data)
 .mneme/
 
-# mneme binary (download from releases)
-mneme.exe
+# mneme binary (tracked in repo for self-contained framework)
+# mneme.exe
 
 # OS files
 Thumbs.db
