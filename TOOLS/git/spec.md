@@ -16,3 +16,4 @@
 - 只 commit 使用者明確要求的內容
 - 不 commit secrets 或憑證
 - commit message 簡潔描述變更內容
+- 依照功能拆分 commit，每個 commit 只包含單一功能的變更，不相關的改動分開提交
