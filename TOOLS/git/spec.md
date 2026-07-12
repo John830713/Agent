@@ -18,3 +18,4 @@
 - commit message 簡潔描述變更內容
 - 依照功能拆分 commit，每個 commit 只包含單一功能的變更，不相關的改動分開提交
 - 改動前先確保有可退的 commit。開始修改前，先 commit 目前的穩定狀態（或確認上次 commit 是乾淨的），改壞了才能 `git revert` 或 `git reset`
+- 只 commit，不 push。Push 由使用者處理。
