@@ -28,3 +28,4 @@ TOOLS/
 |------|------|
 | [mneme](mneme/) | 持久記憶後端，跨 session 儲存/查詢 |
 | [git](git/) | 版本控制操作 |
+| [design](design/) | UI 設計慣例與可重複使用的 pattern |
