@@ -71,3 +71,11 @@ Copy-Item -Recurse "D:\Agent\template\.agent" "專案\.agent"
 - 資料目錄：`~/.mneme/`
 - 專案隔離：使用 `switch_scope("<project-name>")` 切換 scope
 - agent 不應在 C 槽非必要路徑寫入檔案
+
+## 資料同步規範
+
+- **MD 檔案** — 兩岸同步的知識，跨機台共享。任何發現、API、protocol、最佳實踐都寫這裡。
+- **mneme memory** — 個人進度、臨時決策、session 間的上下文。不跨機台。
+- **git commit** — 程式碼變更，跨機台同步。
+
+各專案的 `AGENTS.md` 放專案特定知識，`D:\Agent` 放跨專案的通用知識。
