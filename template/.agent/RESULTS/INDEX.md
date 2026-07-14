@@ -2,4 +2,4 @@
 
 存放已完成任務的產出與總結。
 
-遵循 `D:\Agent\SCHEMA\result.schema.md` 規範。
+遵循 `D:\Agent\AGENTS.md` § 結果歸檔 規範。

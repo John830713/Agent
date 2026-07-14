@@ -1,6 +1,6 @@
 # TASKS — 任務管理
 
-遵循 `D:\Agent\SCHEMA\task.schema.md` 規範。
+遵循 `D:\Agent\AGENTS.md` § 任務管理 規範。
 
 ## 任務類型
 

@@ -2,4 +2,4 @@
 
 臨時產生的任務，完成後移至 RESULTS/ 或清除。
 
-遵循 `D:\Agent\SCHEMA\task.schema.md` 規範。
+遵循 `D:\Agent\AGENTS.md` § 任務管理 規範。
