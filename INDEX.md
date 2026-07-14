@@ -8,19 +8,22 @@
 D:\Agent\
 ├── INDEX.md          # 本檔案 — 框架說明
 ├── AGENTS.md         # Agent 啟動指引（每次 session 必讀）
+├── opencode.json     # OpenCode 設定
 ├── mneme.exe         # 記憶後端二進位
 │
-├── SCHEMA/           # 結構定義 — 目錄/檔案格式規範
-│   ├── task.schema.md
-│   ├── tool.schema.md
-│   ├── result.schema.md
-│   ├── config.schema.md
-│   └── log.schema.md
-│
-├── TOOLS/            # 工具庫定義
+├── resources/        # 工具說明書、通用參考、技能定義（各機台自行維護，不進 git）
 │   ├── INDEX.md
-│   ├── mneme/
-│   └── git/
+│   ├── tools/
+│   │   ├── common/   # 跨專案通用工具
+│   │   ├── local/    # 本機限定工具
+│   │   └── design/   # UI 設計庫
+│   ├── skills/       # 技能定義
+│   └── reference/    # 通用參考資料
+│
+├── template/         # 新專案初始化範本
+│   ├── .agent/
+│   ├── resources/    # 新機台起始工具參考（進 git）
+│   └── bootstrap.py
 │
 └── CONFIG/           # 框架設定
     └── INDEX.md
@@ -46,5 +49,4 @@ D:\Test1\             # 專案目錄
 
 - **`D:\Agent\` 只放靜態定義** — git 倉庫不追蹤動態狀態
 - **每個目錄有 INDEX.md** — AI 讀了就懂該目錄用途
-- **TOOLS/ 讓 AI 自主查閱** — 不需問使用者有什麼工具
-- **SCHEMA/ 規範一切結構** — 遵循 schema 就不會亂
+- **resources/ 讓 AI 自主查閱** — 不需問使用者有什麼工具

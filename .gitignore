@@ -7,3 +7,6 @@
 # OS files
 Thumbs.db
 .DS_Store
+
+# Machine-specific resources (content not tracked by git)
+/resources/
