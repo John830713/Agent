@@ -12,4 +12,4 @@ Purpose: Version control for source code and document change history.
 ## Limitations
 
 - Requires a git repository
-- Do not commit `.mneme/` data directory
+- Never commit `.mneme/` or `.agent/` directories
