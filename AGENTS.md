@@ -31,7 +31,8 @@
 |------|------|
 | 初始化新專案（從零建 .agent/） | `python D:\Agent\template\bootstrap.py <路徑>` |
 | 連同工具範本一起初始化 | `python D:\Agent\template\bootstrap.py <路徑> --tools` |
-| 工具清單與用法 | `D:\Agent\resources/tools/` |
+| 工具清單與用法 | `D:\Agent\TOOLS/` |
+| 重啟 OpenCode | `D:\Agent\TOOLS\local\restart-opencode\` 或 `resources/skills/restart-opencode.md` |
 | 新機台工具起始參考 | `D:\Agent\template\resources/tools/` |
 | 技能定義 | `D:\Agent\resources/skills/` |
 | 通用參考 | `D:\Agent\resources/reference/` |

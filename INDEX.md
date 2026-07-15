@@ -11,6 +11,10 @@ D:\Agent\
 ├── opencode.json     # OpenCode 設定
 ├── mneme.exe         # 記憶後端二進位
 │
+├── TOOLS/            # 工具腳本（分類存放）
+│   ├── common/       # 跨專案通用（git, mneme, analyze）
+│   └── local/        # 本機限定（restart-opencode 等）
+│
 ├── resources/        # 工具說明書、通用參考、技能定義（各機台自行維護，不進 git）
 │   ├── INDEX.md
 │   ├── tools/
