@@ -18,8 +18,3 @@ AI agent 可自主查閱的工具清單。每個工具為一個獨立子目錄�
 | [upx](local/upx/) | UPX 脫殼 | upx.exe |
 | [pycdc](local/pycdc/) | Python 反編譯 | pycdc.exe |
 
-## design/ - Tampermonkey UI design library
-
-| 工具 | 用途 |
-|------|------|
-| [design](design/) | UI pattern library for Tampermonkey scripts |

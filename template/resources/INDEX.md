@@ -13,10 +13,10 @@ resources/
 ├── INDEX.md
 ├── tools/              # Tool specifications and usage
 │   ├── common/         # Cross-project tools
-│   ├── local/          # Machine-specific tools
-│   └── design/         # Tampermonkey UI pattern library
+│   └── local/          # Machine-specific tools
 ├── skills/             # Reusable AI agent skill definitions
 └── reference/          # General reference material
+    └── design/         # Tampermonkey UI pattern library
 ```
 
 ## Lookup order

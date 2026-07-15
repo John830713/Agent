@@ -19,10 +19,9 @@ D:\Agent\
 │   ├── INDEX.md
 │   ├── tools/
 │   │   ├── common/   # 跨專案通用工具
-│   │   ├── local/    # 本機限定工具
-│   │   └── design/   # UI 設計庫
+│   │   └── local/    # 本機限定工具
 │   ├── skills/       # 技能定義
-│   └── reference/    # 通用參考資料
+│   └── reference/    # 通用參考資料（含 design 庫）
 │
 ├── template/         # 新專案初始化範本
 │   ├── .agent/
