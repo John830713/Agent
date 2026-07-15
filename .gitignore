@@ -1,8 +1,8 @@
 # mneme data directory (user-specific, not project data)
 .mneme/
 
-# mneme binary (tracked in repo for self-contained framework)
-# mneme.exe
+# Agent runtime data per project
+.agent/
 
 # OS files
 Thumbs.db
