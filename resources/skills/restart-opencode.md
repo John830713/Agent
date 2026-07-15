@@ -20,6 +20,7 @@ Restart the OpenCode desktop app to reload tool definitions or config changes.
 
 ## Gotchas
 
+- **先說「準備重啟中」再執行** — 重啟命令會讓 agent 卡住，用戶看到卡住會以為當機。提示一句讓他知道是正常的。
 - `taskkill /f /im OpenCode.exe` only targets OpenCode — safe for other processes
 - PS1 version also starts mneme daemon; Python version does not
 - Paths are hardcoded to `%LOCALAPPDATA%` — won't work on other machines
