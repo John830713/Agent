@@ -116,7 +116,7 @@ RESULTS/<task-name>/
 
 ## mneme 設定
 
-- `D:\Agent\mneme.exe` — 專案內二進位
+- `D:\Agent\resources\tools\common\mneme\mneme.exe` — 記憶後端二進位
 - 資料目錄：`~/.mneme/`
 - 專案隔離：使用 `switch_scope("<project-name>")`
 - 跨 session 記憶：使用 `remember`/`recall`

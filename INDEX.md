@@ -9,7 +9,6 @@ D:\Agent\
 ├── INDEX.md          # 本檔案 — 框架說明
 ├── AGENTS.md         # Agent 啟動指引（每次 session 必讀）
 ├── opencode.json     # OpenCode 設定
-├── mneme.exe         # 記憶後端二進位
 │
 ├── TOOLS/            # 工具腳本（分類存放）
 │   ├── common/       # 跨專案通用（git, mneme, analyze）

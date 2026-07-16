@@ -23,14 +23,14 @@ winget install Git.Git
 從 <https://github.com/amcharles/mneme/releases> 下載 mneme 二進位檔：
 
 ```powershell
-Move-Item ~\Downloads\mneme-*.exe D:\Agent\mneme.exe -Force
-D:\Agent\mneme.exe init
-D:\Agent\mneme.exe init opencode
+Move-Item ~\Downloads\mneme-*.exe D:\Agent\resources\tools\common\mneme\mneme.exe -Force
+D:\Agent\resources\tools\common\mneme\mneme.exe init
+D:\Agent\resources\tools\common\mneme\mneme.exe init opencode
 ```
 
 驗證：
 ```powershell
-D:\Agent\mneme.exe status
+D:\Agent\resources\tools\common\mneme\mneme.exe status
 # 預期: mneme is running (pid: xxx)
 ```
 
@@ -71,7 +71,7 @@ Test-Path "D:\Agent\TOOLS"                                  # False
 
 ```powershell
 # 啟動 daemon
-D:\Agent\mneme.exe daemon
+D:\Agent\resources\tools\common\mneme\mneme.exe daemon
 
 # lock 清理（daemon 異常時）
 Remove-Item -Force "$env:USERPROFILE\.mneme\.lock" -ErrorAction SilentlyContinue
@@ -89,7 +89,7 @@ Remove-Item -Force "$env:USERPROFILE\.mneme\.lock" -ErrorAction SilentlyContinue
 {
   "mcp": {
     "mneme": {
-      "command": ["D:\\Agent\\mneme.exe", "run"],
+      "command": ["D:\\Agent\\resources\\tools\\common\\mneme\\mneme.exe", "run"],
       "timeout": 120000,
       "enabled": true,
       "type": "local"
@@ -104,7 +104,7 @@ Remove-Item -Force "$env:USERPROFILE\.mneme\.lock" -ErrorAction SilentlyContinue
 
 ```powershell
 git --version
-D:\Agent\mneme.exe status
+D:\Agent\resources\tools\common\mneme\mneme.exe status
 Test-Path "D:\Agent\resources\tools\common\git\INDEX.md"
 Test-Path "D:\Agent\TOOLS"
 ```
