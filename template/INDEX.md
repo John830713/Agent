@@ -2,12 +2,16 @@
 
 New project initialization template for the Project Memory Framework.
 
-```
-template/
-├── .agent/           # Agent runtime skeleton (TASKS, RESULTS, LOGS)
-├── resources/        # New machine starting reference for tools/skills/reference
-└── bootstrap.py      # One-command project initializer
-```
+## Forward links
+
+| Path | Description |
+|------|-------------|
+| [resources/](resources/INDEX.md) | New machine starting reference (tools, skills, reference) |
+| [bootstrap.py](bootstrap.py) | One-command project initializer |
+
+## Referenced by
+
+- `AGENTS.md` → Quick reference (new machine seed)
 
 ## Usage
 
@@ -15,4 +19,4 @@ template/
 python D:\Agent\template\bootstrap.py <project-dir> [--tools]
 ```
 
-`--tools` also copies template/resources/ into the project's .agent/Resources/ directory.
+`--tools` copies template resources into `.agent/Tools/`.

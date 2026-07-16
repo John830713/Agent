@@ -1,9 +1,21 @@
 # Reference
 
-Shared reference documents across projects.
+Rules, conventions, and notes organized by topic.
 
-## design/
+## Forward links
 
-| Item | Description |
+| Path | Description |
 |------|-------------|
-| [design](design/) | Tampermonkey UI pattern library (colors, layouts, reusable components) |
+| [design/](design/INDEX.md) | Tampermonkey UI pattern library |
+| [task/](task/INDEX.md) | Task lifecycle and management |
+| [log/](log/INDEX.md) | Session log format |
+| [tool/](tool/INDEX.md) | Tool lookup order, adding rules, git tracking |
+| [conventions/](conventions/INDEX.md) | File naming, data sync |
+| [git/](git/INDEX.md) | Git commit rules, workflow, safety |
+| [mneme/](mneme/INDEX.md) | Mneme capacity, scope, session flow |
+| [restart-opencode/](restart-opencode/INDEX.md) | Restart OpenCode gotchas, path deps |
+| [chain/](chain/INDEX.md) | INDEX chain specification |
+
+## Referenced by
+
+- `resources/INDEX.md` → Reference section

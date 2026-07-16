@@ -13,3 +13,7 @@ Tampermonkey script UI design conventions and reusable patterns.
 - nHentai Dynamic Layout.js — infinite scroll + page jumper
 - rule34-gallery.js — bidirectional infinite scroll
 - anime1-infinite-scroll.js — API-driven infinite scroll + page jumper
+
+## Referenced by
+
+- `reference/INDEX.md` → Design section

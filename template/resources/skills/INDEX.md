@@ -1,9 +1,17 @@
 # Skills
 
-This directory contains reusable AI agent skill definitions.
+Reusable AI agent skill definitions for tools bundled in this repo.
 
-Skills provide specialized instructions and workflows specific to a domain.
+## Forward links
 
-## Available skills
+| Skill | Description |
+|-------|-------------|
+| [mneme](mneme.md) | Persistent memory — store, recall, pin facts and decisions |
+| [restart-opencode](restart-opencode.md) | Restart OpenCode to reload tools and config |
 
-*(empty - add skills as needed)*
+> Note: Skill `.md` files are force-tracked in `D:\Agent\resources\skills\`, not in template.
+> This INDEX serves as a reference to what exists.
+
+## Referenced by
+
+- `resources/INDEX.md` → Skills section
