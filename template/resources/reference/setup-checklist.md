@@ -100,7 +100,11 @@ Remove-Item -Force "$env:USERPROFILE\.mneme\.lock" -ErrorAction SilentlyContinue
 
 ---
 
-## 6. 驗證清單
+## 6. 專案 INDEX chain 建置
+
+一般專案請依照 `reference/chain/INDEX.md` 的「Project setup guide」建置 INDEX chain。
+
+## 7. 驗證清單
 
 ```powershell
 git --version

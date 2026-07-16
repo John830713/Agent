@@ -45,6 +45,95 @@ Leaf nodes (no sub-nodes) have an empty `forward` array.
 - When the schema changes, all nodes are updated together.
 - `chain-check --init` validates version consistency before running.
 
-## 6. Referenced by
+## 6. Project setup guide
+
+Use `D:\Agent\` as the reference architecture — its INDEX chain is the canonical model.
+
+### 6.1 Prerequisites
+
+- `chain_check.py` installed (`D:\Agent\resources\tools\common\chain-check\chain_check.py`)
+- Python 3.6+ and `git` on PATH
+
+### 6.2 Identify nodes
+
+Every directory that should be navigable as a tree node needs an `.index.json` + `INDEX.md`.
+
+Common project node structure:
+
+```
+project-root/           → root node (forward points to children)
+├── resources/          → resource node
+│   ├── reference/      → leaf node (forward: [])
+│   ├── skills/         → leaf node
+│   └── tools/          → leaf node
+└── .agent/             → runtime data, NOT a chain node
+```
+
+### 6.3 Create `.index.json` per node
+
+Root node — forward to immediate children:
+```json
+{"version": 1, "forward": ["resources/"], "referenced_by": []}
+```
+
+Interior node — forward to sub-nodes, referenced_by to parent:
+```json
+{"version": 1, "forward": ["reference/", "skills/", "tools/"], "referenced_by": [".."]}
+```
+
+Leaf node — empty forward:
+```json
+{"version": 1, "forward": [], "referenced_by": [".."]}
+```
+
+### 6.4 Update each `INDEX.md`
+
+Every node INDEX.md must have `## Forward links` and `## Referenced by` sections.
+
+Root node example:
+```markdown
+## Forward links
+
+| Path | Description |
+|------|-------------|
+| [resources/](resources/INDEX.md) | Project resources |
+
+## Referenced by
+
+- *(Root node — entry point for this project's INDEX chain)*
+```
+
+Interior node example:
+```markdown
+## Forward links
+
+| Path | Description |
+|------|-------------|
+| [reference/](reference/INDEX.md) | Design reference |
+
+## Referenced by
+
+- [INDEX.md](../INDEX.md)
+```
+
+Leaf node:
+```markdown
+## Referenced by
+
+- [resources/INDEX.md](../INDEX.md)
+```
+
+### 6.5 Verify
+
+```powershell
+python D:\Agent\resources\tools\common\chain-check\chain_check.py --root <project-dir> --init
+python D:\Agent\resources\tools\common\chain-check\chain_check.py --root <project-dir> --verify
+```
+
+### 6.6 Commit
+
+The project now has a valid INDEX chain. Commit the new `.index.json` files and updated `INDEX.md` files together.
+
+## 7. Referenced by
 
 - [reference/INDEX.md](../INDEX.md)
