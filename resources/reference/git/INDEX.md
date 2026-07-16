@@ -1,6 +1,6 @@
 # git — Rules & Notes
 
-**Precondition for any commit**: run `git diff --cached` and review output before committing.
+**Precondition for any commit**: run `git diff --cached` and review output before committing. Violating this precondition will block the commit.
 
 ## Commit rules
 
