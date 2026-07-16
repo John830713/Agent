@@ -22,7 +22,7 @@ Leaf nodes (no sub-nodes) have an empty `forward` array.
 {
   "version": 1,
   "forward": ["child-dir/"],
-  "referenced_by": ["../parent-dir/INDEX.md"]
+  "referenced_by": [".."]
 }
 ```
 
@@ -30,12 +30,12 @@ Leaf nodes (no sub-nodes) have an empty `forward` array.
 |-------|----------|-------------|
 | `version` | Yes | Schema version (integer). Must match across all nodes. |
 | `forward` | Yes | Array of child directory paths (relative to this JSON). Empty for leaf nodes. |
-| `referenced_by` | Yes | Array of parent file paths (relative to this JSON) that reference this node. |
+| `referenced_by` | Yes | Array of paths to parent nodes (relative to this JSON). `..` for direct parent, more hops for non-node intermediates. |
 
 ## 4. Chain rules
 
 - **Forward links** — parent → child. `forward` entries point from a node to its sub-nodes.
-- **Backward links** — child → parent. `referenced_by` entries point from a node to its parent INDEX.md.
+- **Backward links** — child → parent. `referenced_by` entries point from a node to its nearest ancestor node directory.
 - Every `forward` entry must have a matching `referenced_by` entry in the target.
 - Every `referenced_by` entry must have a matching `forward` entry in the source.
 
@@ -47,4 +47,4 @@ Leaf nodes (no sub-nodes) have an empty `forward` array.
 
 ## 6. Referenced by
 
-- `reference/INDEX.md` → Chain section
+- [reference/INDEX.md](../INDEX.md)

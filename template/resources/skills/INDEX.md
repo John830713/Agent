@@ -14,4 +14,4 @@ Reusable AI agent skill definitions for tools bundled in this repo.
 
 ## Referenced by
 
-- `resources/INDEX.md` → Skills section
+- [INDEX.md](../INDEX.md)

@@ -11,7 +11,7 @@ New project initialization template for the Project Memory Framework.
 
 ## Referenced by
 
-- `AGENTS.md` → Quick reference (new machine seed)
+*(None — root node)*
 
 ## Usage
 

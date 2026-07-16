@@ -12,3 +12,7 @@ Native C/C++ PE analysis tool. Wraps MSYS2 objdump + c++filt + addr2line.
 
 - Requires MSYS2 tools (objdump / c++filt / addr2line)
 - Stripped EXEs show only raw `.text` section, no function names
+
+## Referenced by
+
+- [tools/INDEX.md](../../INDEX.md)

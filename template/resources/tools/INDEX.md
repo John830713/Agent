@@ -14,4 +14,4 @@ Tool documentation and specs organized by type.
 
 ## Referenced by
 
-- `resources/INDEX.md` → Tools section
+- [INDEX.md](../INDEX.md)

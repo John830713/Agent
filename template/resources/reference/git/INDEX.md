@@ -29,4 +29,4 @@
 
 ## Referenced by
 
-- `reference/INDEX.md` → Git section
+- [reference/INDEX.md](../INDEX.md)

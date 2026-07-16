@@ -19,4 +19,4 @@
 
 ## Referenced by
 
-- `reference/INDEX.md` → Restart OpenCode section
+- [reference/INDEX.md](../INDEX.md)

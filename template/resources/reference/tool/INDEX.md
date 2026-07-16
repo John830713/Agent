@@ -20,4 +20,4 @@
 
 ## Referenced by
 
-- `reference/INDEX.md` → Tool section
+- [reference/INDEX.md](../INDEX.md)

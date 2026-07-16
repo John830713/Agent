@@ -16,8 +16,7 @@ Copy-Item -Recurse "D:\Agent\template\resources" "D:\Agent\resources"
 
 ## Referenced by
 
-- [template/INDEX.md](../INDEX.md) → Resources section
-- `AGENTS.md` → Startup flow (step 2)
+- [INDEX.md](../INDEX.md)
 
 ## Notes
 

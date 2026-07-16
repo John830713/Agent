@@ -16,4 +16,4 @@ Tampermonkey script UI design conventions and reusable patterns.
 
 ## Referenced by
 
-- `reference/INDEX.md` → Design section
+- [reference/INDEX.md](../INDEX.md)

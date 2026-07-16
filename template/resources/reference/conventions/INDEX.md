@@ -14,4 +14,4 @@
 
 ## Referenced by
 
-- `reference/INDEX.md` → Conventions section
+- [reference/INDEX.md](../INDEX.md)

@@ -34,4 +34,4 @@
 
 ## Referenced by
 
-- `reference/INDEX.md` → Mneme section
+- [reference/INDEX.md](../INDEX.md)

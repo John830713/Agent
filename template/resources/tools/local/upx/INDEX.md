@@ -10,3 +10,7 @@ Ultimate Packer for eXecutables — PE/ELF/Mach-O packer/unpacker.
 ## Limitations
 
 - Only supports standard UPX format, non-standard packing may be incompatible
+
+## Referenced by
+
+- [tools/INDEX.md](../../INDEX.md)

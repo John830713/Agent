@@ -18,4 +18,4 @@ Rules, conventions, and notes organized by topic.
 
 ## Referenced by
 
-- `resources/INDEX.md` → Reference section
+- [INDEX.md](../INDEX.md)

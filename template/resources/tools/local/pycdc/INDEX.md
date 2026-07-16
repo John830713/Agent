@@ -11,3 +11,7 @@ Python bytecode decompiler / disassembler (zrsx/pycdc fork).
 ## Limitations
 
 - Some Python constructs may not fully decompile (comprehensions, decorators)
+
+## Referenced by
+
+- [tools/INDEX.md](../../INDEX.md)

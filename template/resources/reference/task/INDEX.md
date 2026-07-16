@@ -20,4 +20,4 @@ Each task directory needs at least one doc file (`INDEX.md` or `checklist.md`). 
 
 ## Referenced by
 
-- `reference/INDEX.md` → Task section
+- [reference/INDEX.md](../INDEX.md)
