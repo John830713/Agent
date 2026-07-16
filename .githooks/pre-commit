@@ -1,8 +1,21 @@
 #!/bin/sh
-# Pre-commit hook: INDEX chain integrity check
+# Pre-commit hook: display commit rules + verify INDEX chain integrity
+
+echo ""
+echo "=== Git commit checklist (MUST verify before commit) ==="
+echo "[ ] 1. One feature per commit — split if mixed concerns"
+echo "[ ] 2. Only commit what was explicitly requested"
+echo "[ ] 3. No secrets or credentials in staged files"
+echo "[ ] 4. Commit message is concise English"
+echo "[ ] 5. git diff --cached was reviewed"
+echo "========================================================"
+echo ""
+
 python "D:/Agent/resources/tools/common/chain-check/chain_check.py" --root "D:/Agent" --verify
 if [ $? -ne 0 ]; then
-    echo "ABORT: INDEX chain integrity check failed."
+    echo ""
+    echo "ABORT: INDEX chain integrity check failed. Fix errors before committing."
     exit 1
 fi
+
 echo "INDEX chain OK."
