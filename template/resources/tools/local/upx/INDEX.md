@@ -1,4 +1,4 @@
-# upx
+﻿# upx
 
 Ultimate Packer for eXecutables — PE/ELF/Mach-O packer/unpacker.
 

@@ -1,4 +1,4 @@
-# pycdc / pycdas
+﻿# pycdc / pycdas
 
 Python bytecode decompiler / disassembler (zrsx/pycdc fork).
 

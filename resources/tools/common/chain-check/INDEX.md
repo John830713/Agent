@@ -35,3 +35,7 @@ Agent reads the `[MOD]` and `[NEW]` lines and reads only those files.
 - Cache stored in `~/.opencode/chain-cache.json` — machine-local, not in git
 - Hash uses `git hash-object` — same content = same hash across machines
 - Requires Python 3.6+ and `git` on PATH
+
+## Referenced by
+
+- [tools/INDEX.md](../../INDEX.md)

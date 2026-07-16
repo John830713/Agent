@@ -14,3 +14,7 @@ Purpose: Persistent memory backend providing cross-session semantic memory stora
 - Not suitable for large files or code
 - Semantic search depends on embedding model
 - Uses `~/.mneme/` as data directory
+
+## Referenced by
+
+- [tools/INDEX.md](../../INDEX.md)

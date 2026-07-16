@@ -37,3 +37,7 @@ python D:\Agent\resources\tools\common\restart-opencode\restart_opencode.py
 - Paths are hardcoded to `%LOCALAPPDATA%` — machine-specific, not portable
 - PS1 version starts mneme daemon; use this if mneme needs to be running
 - Python version is simpler, use if mneme is already running
+
+## Referenced by
+
+- [tools/INDEX.md](../../INDEX.md)

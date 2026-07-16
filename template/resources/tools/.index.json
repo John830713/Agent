@@ -1,1 +1,1 @@
-{"version": 1, "forward": ["common/analyze/", "common/mneme/", "local/native_analyzer/", "local/upx/", "local/pycdc/"], "referenced_by": [".."]}
+{"version": 1, "forward": [], "referenced_by": [".."]}

@@ -1,4 +1,4 @@
-# native_analyzer.py
+﻿# native_analyzer.py
 
 Native C/C++ PE analysis tool. Wraps MSYS2 objdump + c++filt + addr2line.
 

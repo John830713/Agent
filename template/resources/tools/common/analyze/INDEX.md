@@ -1,4 +1,4 @@
-# analyze.py
+﻿# analyze.py
 
 Universal EXE detection and classification. Pure Python 3 + struct, no 3rd-party dependencies.
 
