@@ -9,7 +9,6 @@ AI agent 可自主查閱的工具清單。每個工具為一個獨立子目錄�
 | [git](common/git/) | 版本控制操作 |
 | [mneme](common/mneme/) | 持久記憶後端 |
 | [analyze](common/analyze/) | 萬用 EXE 檢測（純 Python） |
-| [restart-opencode](common/restart-opencode/) | 重新啟動 OpenCode + mneme |
 
 ## local/ - 本機限定工具
 
