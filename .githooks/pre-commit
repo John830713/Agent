@@ -1,44 +1,8 @@
-#!/usr/bin/env python3
-"""
-Pre-commit hook: enforce INDEX chain integrity and git commit rules.
-
-Installed via: git config core.hooksPath .githooks
-"""
-import subprocess, sys
-
-ROOT = "D:/Agent"
-CHECKER = "D:/Agent/resources/tools/common/chain-check/chain_check.py"
-
-COMMIT_RULES = """
-=== Git commit checklist (MUST verify before commit) ===
-[ ] 1. One feature per commit — split if mixed concerns
-[ ] 2. Only commit what was explicitly requested
-[ ] 3. No secrets or credentials in staged files
-[ ] 4. Commit message is concise English
-[ ] 5. git diff --cached was reviewed
-=== Run the checks above manually before committing ===
-"""
-
-def run_checker():
-    result = subprocess.run(
-        ["python", CHECKER, "--root", ROOT, "--verify"],
-        capture_output=True, text=True
-    )
-    if result.returncode != 0:
-        print("CHAIN VERIFY FAILED:")
-        print(result.stdout)
-        print(result.stderr)
-        return False
-    return True
-
-def main():
-    print(COMMIT_RULES)
-
-    if not run_checker():
-        print("ABORT: INDEX chain integrity check failed.")
-        sys.exit(1)
-
-    print("INDEX chain OK.")
-
-if __name__ == "__main__":
-    main()
+#!/bin/sh
+# Pre-commit hook: INDEX chain integrity check
+python "D:/Agent/resources/tools/common/chain-check/chain_check.py" --root "D:/Agent" --verify
+if [ $? -ne 0 ]; then
+    echo "ABORT: INDEX chain integrity check failed."
+    exit 1
+fi
+echo "INDEX chain OK."
