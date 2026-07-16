@@ -220,9 +220,9 @@ def main():
     if args.init:
         do_init(args.root)
     elif args.check:
-        do_check(args.root)
+        sys.exit(do_check(args.root))
     elif args.verify:
-        do_verify(args.root)
+        sys.exit(do_verify(args.root))
     else:
         parser.print_help()
 
