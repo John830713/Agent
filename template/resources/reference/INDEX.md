@@ -7,9 +7,7 @@ Rules, conventions, and notes organized by topic.
 | Path | Description |
 |------|-------------|
 | [design/](design/INDEX.md) | Tampermonkey UI pattern library |
-| [task/](task/INDEX.md) | Task lifecycle and management |
 | [log/](log/INDEX.md) | Session log format |
-| [tool/](tool/INDEX.md) | Tool lookup order, adding rules, git tracking |
 | [conventions/](conventions/INDEX.md) | File naming, data sync |
 | [git/](git/INDEX.md) | Git commit rules, workflow, safety |
 | [mneme/](mneme/INDEX.md) | Mneme capacity, scope, session flow |
