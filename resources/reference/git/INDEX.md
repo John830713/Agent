@@ -1,5 +1,7 @@
 # git — Rules & Notes
 
+**Precondition for any commit**: run `git diff --cached` and review output before committing.
+
 ## Commit rules
 
 - Commit whenever changes exist — better to over-commit and squash later than to miss a submission
