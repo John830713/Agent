@@ -1,5 +1,12 @@
 # mneme — Rules & Notes
 
+## Quick facts
+
+- Binary: `D:\Agent\resources\tools\common\mneme\mneme.exe`
+- Data dir: `~/.mneme/`
+- Project isolation: use `switch_scope("<project-name>")`
+- Cross-session memory: `remember` / `recall` / `pin`
+
 ## Capacity
 
 - Target under 500 characters per memory
@@ -31,3 +38,9 @@
 - `mneme://context` — recent events auto-loaded
 - `record_event` for time-anchored events (milestones, messages)
 - `summarize_session` + LLM completion for session digests
+
+## Referenced by
+
+- `resources/reference/INDEX.md` → Subtopic listing
+- `resources/INDEX.md` → Tools section
+- `AGENTS.md` → Quick reference

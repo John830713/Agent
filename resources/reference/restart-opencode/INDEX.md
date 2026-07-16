@@ -23,3 +23,9 @@
 - OpenCode reloads `.opencode/tools/` from disk — no reinstall needed
 - Verify tools and config are loaded correctly
 - If mneme daemon fails, check `~/.mneme/.lock`
+
+## Referenced by
+
+- `resources/reference/INDEX.md` → Subtopic listing
+- `resources/INDEX.md` → Tools section
+- `AGENTS.md` → Quick reference
