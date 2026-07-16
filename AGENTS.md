@@ -8,6 +8,12 @@ This repo is a **framework of agent instructions**, not a software project. It d
 
 ---
 
+## Language
+
+- 結論與總結 → 繁體中文
+- 中間推理過程 → 可用英文
+- 程式碼註解 → 全部英文
+
 ## Session start
 
 ### Startup flow

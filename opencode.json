@@ -1,7 +1,18 @@
 {
   "$schema": "https://opencode.ai/config.json",
   "instructions": [
+    "AGENTS.md",
     "INDEX.md",
-    "AGENTS.md"
-  ]
+    "C:\\Users\\John\\.config\\opencode\\mneme-memory.md"
+  ],
+  "mcp": {
+    "mneme": {
+      "command": [
+        "D:\\Agent\\resources\\tools\\common\\mneme\\mneme.exe",
+        "run"
+      ],
+      "enabled": true,
+      "type": "local"
+    }
+  }
 }
