@@ -49,9 +49,24 @@ Copy-Item -Recurse "D:\Agent\template\resources" "D:\Agent\resources"
 - If the operation has a matching reference doc (e.g., git → `resources/reference/git/`), **read that INDEX.md first** before acting
 - Reference INDEX.md files are already in context from the startup chain load — re-read only if context was lost
 
+### Git commits — pre-commit hook
+- The pre-commit hook at `.githooks/pre-commit` runs `chain_check.py --verify` automatically before every commit
+- This validates all INDEX.md forward/backward links — if it fails, the commit is blocked
+- Run `git config core.hooksPath .githooks` once per machine to enable the hook
+- To verify manually: `python D:\Agent\resources\tools\common\chain-check\chain_check.py --root D:\Agent --verify`
+
 ### Session end
 - **Check for pending changes** — run `git status D:\Agent`; if there are uncommitted changes, offer to commit
 - Run `chain_check.py --check` to refresh the cache so the next session picks up only what changed
+
+---
+
+## Gotchas
+
+- **`/resources/` is gitignored** — it is machine-local. Only `template/resources/` is tracked. New machines must seed from `template/resources/`.
+- **`chain_check.py --check` vs `--verify`** — `--check` hashes INDEX.md files and detects content changes (session start). `--verify` validates link integrity (pre-commit). Use the right one.
+- **mneme MCP server** — runs as a local process (`mneme.exe run`) with 120s timeout. Memory writes should go through `mneme_remember`/`mneme_pin`, not file edits.
+- **Git hooks must be enabled** — run `git config core.hooksPath .githooks` on a fresh clone.
 
 ---
 
@@ -71,7 +86,9 @@ Copy-Item -Recurse "D:\Agent\template\resources" "D:\Agent\resources"
 | File naming & data sync | `D:\Agent\resources/reference/conventions/` |
 | Git rules & workflow | `D:\Agent\resources/reference/git/` |
 | mneme rules & limits | `D:\Agent\resources/reference/mneme/` |
-| Restart OpenCode notes | `D:\Agent\resources/reference/restart-opencode/` |
+| Restart OpenCode | `D:\Agent\resources\tools\common\opencode\restart.ps1` |
+| Send message to self | `D:\Agent\resources\tools\common\opencode\send.ps1 -Text "msg"` |
+| OpenCode notes | `D:\Agent\resources\reference\opencode\` |
 | New machine seed | `D:\Agent\template/resources/` |
 | Framework config | `D:\Agent\CONFIG/` |
 | Auto-check command | `.opencode/commands/auto-check.md` |

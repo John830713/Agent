@@ -11,7 +11,7 @@ Rules, conventions, and notes organized by topic.
 | [conventions/](conventions/INDEX.md) | File naming, data sync |
 | [git/](git/INDEX.md) | Git commit rules, workflow, safety |
 | [mneme/](mneme/INDEX.md) | Mneme capacity, scope, session flow |
-| [restart-opencode/](restart-opencode/INDEX.md) | Restart OpenCode gotchas, path deps |
+| [opencode/](opencode/INDEX.md) | OpenCode app rules, restart, send-to-self |
 | [chain/](chain/INDEX.md) | INDEX chain specification |
 
 ## Referenced by

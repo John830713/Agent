@@ -37,6 +37,6 @@ resources/
     ├── conventions/    # Naming + data sync rules
     ├── git/            # Git rules and workflow
     ├── mneme/          # Mneme memory rules
-    ├── restart-opencode/ # Restart OpenCode notes
+    ├── opencode/        # OpenCode app rules, restart, send-to-self
     └── chain/          # INDEX chain specification
 ```
