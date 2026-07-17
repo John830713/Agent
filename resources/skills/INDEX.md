@@ -8,7 +8,6 @@ Reusable AI agent skill definitions for tools bundled in this repo.
 |-------|-------------|
 | [mneme](mneme.md) | Persistent memory — store, recall, pin facts and decisions |
 | [opencode](opencode.md) | OpenCode app operations — restart, send-to-self |
-| [send](send.md) | Send message to self via clipboard paste |
 
 ## Referenced by
 
