@@ -74,8 +74,7 @@ Copy-Item -Recurse "D:\Agent\template\resources" "D:\Agent\resources"
 
 | Need | Path |
 |------|------|
-| Init new project | `python D:\Agent\template\bootstrap.py <dir>` |
-| Init with tool templates | `python D:\Agent\template\bootstrap.py <dir> --tools` |
+| New machine seed | `Copy-Item -Recurse D:\Agent\template\resources D:\Agent\resources` |
 | Tool entity files | `D:\Agent\resources/tools/` |
 | Skill usage guides | `D:\Agent\resources/skills/` |
 | Rules, conventions, notes | `D:\Agent\resources/reference/` |

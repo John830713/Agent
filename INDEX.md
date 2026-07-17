@@ -18,10 +18,8 @@ D:\Agent\
 │   ├── skills/       # 技能定義
 │   └── reference/    # 通用參考資料（含 design 庫）
 │
-├── template/         # 新專案初始化範本
-│   ├── .agent/
-│   ├── resources/    # 新機台起始工具參考（進 git）
-│   └── bootstrap.py
+├── template/         # 新機台 resource seed（進 git）
+│   └── resources/    # 新機台起始參考（tools, skills, reference）
 │
 └── CONFIG/           # 框架設定
     └── INDEX.md
