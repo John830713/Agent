@@ -3,7 +3,7 @@
   "instructions": [
     "AGENTS.md",
     "INDEX.md",
-    "C:\\Users\\John\\.config\\opencode\\mneme-memory.md"
+    "C:\\Users\\CloverP\\.config\\opencode\\mneme-memory.md"
   ],
   "mcp": {
     "mneme": {
@@ -12,7 +12,8 @@
         "run"
       ],
       "enabled": true,
-      "type": "local"
+      "type": "local",
+      "timeout": 120000
     }
   }
 }
