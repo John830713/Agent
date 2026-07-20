@@ -21,7 +21,7 @@
 | `common/mneme/` | Mneme memory backend |
 | `common/analyze/` | Code analysis utilities |
 | `common/git/` | Git workflow helpers |
-| `local/` | Machine-specific tools (varies per machine) |
+| `local/` | Machine-specific tools (varies per machine) — e.g. `msys2-portable/`, `autoit-v3/` |
 
 ## Git tracking notes
 
