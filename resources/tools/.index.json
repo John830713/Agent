@@ -1,1 +1,1 @@
-{"version": 1, "forward": ["common/mneme/", "common/chain-check/", "common/restart-opencode/"], "referenced_by": [".."]}
+{"version": 1, "forward": ["common/"], "referenced_by": [".."]}
