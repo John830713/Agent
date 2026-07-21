@@ -37,6 +37,39 @@ Cache is gitignored (under `/resources/`). Rebuild with `scan.py` after adding/r
 2. Run `scan.py` → cache updated
 3. Other projects find the tool via cache lookup
 
+## Registration format rules
+
+When creating `INDEX.md` for a registered tool/skill/reference:
+
+- **Language**: English (per `conventions/INDEX.md` — `.md` files are for AI agents)
+- **Title**: `# <name> — <short description>`
+- **Required sections**:
+  - `## Entity location` — absolute path to the actual tool/skill/reference in the source project
+  - `## Usage` — how to invoke or use it
+  - `## Referenced by` — use markdown link format: `- [parent/INDEX.md](../INDEX.md)`
+- **Do not duplicate content** — the INDEX.md in Agent is a registration pointer, not a full copy. Point to the entity file for details.
+
+Example:
+```markdown
+# my-tool — Short description
+
+Brief overview of what this tool does.
+
+## Entity location
+
+`D:\SomeProject\tools\my-tool\`
+
+## Usage
+
+```powershell
+D:\SomeProject\tools\my-tool\run.ps1 -Arg value
+```
+
+## Referenced by
+
+- [tools/local/INDEX.md](../INDEX.md)
+```
+
 ## Validation flow
 
 1. Run `validate.py` → checks each cache entry's path exists on disk
