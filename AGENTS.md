@@ -18,6 +18,7 @@ This repo is a **framework of agent instructions**, not a software project. It d
 
 ### Startup flow
 
+0. **Read pinned rules** — read `mneme://procedural` and treat all pinned items as binding rules for this session.
 1. **Read core navigation** — `INDEX.md`, `resources/INDEX.md`, `CONFIG/INDEX.md`
 2. **Load INDEX chain** — run `chain_check.py` to sync with cache:
    ```
