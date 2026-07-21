@@ -19,7 +19,7 @@ This repo is a **framework of agent instructions**, not a software project. It d
 ### Startup flow
 
 0. **Read pinned rules** — read `mneme://procedural` and treat all pinned items as binding rules for this session.
-1. **Read core navigation** — `INDEX.md`, `resources/INDEX.md`, `CONFIG/INDEX.md`
+1. **Read core navigation** — `INDEX.md`, `resources/INDEX.md`
 2. **Load INDEX chain** — run `chain_check.py` to sync with cache:
    ```
    python D:\Agent\resources\tools\common\chain-check\chain_check.py
@@ -92,7 +92,7 @@ Copy-Item -Recurse "D:\Agent\template\resources" "D:\Agent\resources"
 | Send message to self | `D:\Agent\resources\tools\common\opencode\send.ps1 -Text "msg"` |
 | OpenCode notes | `D:\Agent\resources\reference\opencode\` |
 | MSYS2/MinGW toolchain | `D:\Agent\resources\reference\toolchain\` |
-| Framework config | `D:\Agent\CONFIG/` |
+| Framework config | *(removed)* |
 | Auto-check command | `.opencode/commands/auto-check.md` |
 
 ---

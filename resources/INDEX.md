@@ -12,5 +12,5 @@ Central directory for tool实体 files, skill usage guides, and reference rules.
 
 ## Referenced by
 
-- `AGENTS.md` → Startup flow (step 2: read resources/INDEX.md)
+- `AGENTS.md` → Startup flow (step 1: read core navigation)
 - `AGENTS.md` → Quick reference table

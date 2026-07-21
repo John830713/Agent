@@ -20,9 +20,6 @@ D:\Agent\
 │
 ├── template/         # 新機台 resource seed（進 git）
 │   └── resources/    # 新機台起始參考（tools, skills, reference）
-│
-└── CONFIG/           # 框架設定
-    └── INDEX.md
 ```
 
 ## 動態資料位置
