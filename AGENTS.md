@@ -26,8 +26,9 @@ This repo is a **framework of agent instructions**, not a software project. It d
    ```
    If no cache exists (first run), use `--init` instead — this reads every INDEX.md in the chain and caches their hashes.
 3. **Read changed nodes** — for each `[MOD]` or `[NEW]` line from step 2, read the corresponding INDEX.md. On first run (`--init`) this means all nodes.
-4. `mneme.switch_scope("<project-name>")` — scope all memory writes to the active project
-5. Check `<project>/.agent/TASKS/` — pick up unfinished work
+4. **Execute agent instructions** — reference files may contain a `**Agent instruction**` block at the top (e.g. `mneme_pin`). Execute these immediately on first read. See `resources/reference/mneme/INDEX.md` for the protocol spec.
+5. `mneme.switch_scope("<project-name>")` — scope all memory writes to the active project
+6. Check `<project>/.agent/TASKS/` — pick up unfinished work
 
 If this is a **new machine**, copy the template resources first:
 ```powershell
@@ -75,6 +76,7 @@ Copy-Item -Recurse "D:\Agent\template\resources" "D:\Agent\resources"
 | Need | Path |
 |------|------|
 | New machine seed | `Copy-Item -Recurse D:\Agent\template\resources D:\Agent\resources` |
+| Template source files | `D:\Agent\template/resources/` |
 | Tool entity files | `D:\Agent\resources/tools/` |
 | Skill usage guides | `D:\Agent\resources/skills/` |
 | Rules, conventions, notes | `D:\Agent\resources/reference/` |
@@ -88,7 +90,6 @@ Copy-Item -Recurse "D:\Agent\template\resources" "D:\Agent\resources"
 | Restart OpenCode | `D:\Agent\resources\tools\common\opencode\restart.ps1` |
 | Send message to self | `D:\Agent\resources\tools\common\opencode\send.ps1 -Text "msg"` |
 | OpenCode notes | `D:\Agent\resources\reference\opencode\` |
-| New machine seed | `D:\Agent\template/resources/` |
 | Framework config | `D:\Agent\CONFIG/` |
 | Auto-check command | `.opencode/commands/auto-check.md` |
 

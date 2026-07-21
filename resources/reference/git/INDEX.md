@@ -1,5 +1,7 @@
 # git — Rules & Notes
 
+**Agent instruction**: when first reading this file in a session, call `mneme_pin` with the commit rule below.
+
 **Precondition for any commit**: run `git diff --cached` and review output before committing.
 
 ## Commit rules

@@ -39,6 +39,21 @@
 - `record_event` for time-anchored events (milestones, messages)
 - `summarize_session` + LLM completion for session digests
 
+## Agent instruction protocol
+
+Reference files may contain a `**Agent instruction**` block at the top of the file. This is a binding directive — the agent **must** execute the specified mneme action on first read in a session.
+
+Pattern:
+```markdown
+**Agent instruction**: when first reading this file in a session, call `mneme_pin` with the rule below.
+```
+
+Rules:
+- Only one `**Agent instruction**` block per file
+- Action must be a mneme tool call (`mneme_pin`, `mneme_remember`, etc.)
+- Agent must not skip or defer — execute immediately on first read
+- This is how reference files proactively register rules into procedural memory without relying on the agent to "figure it out"
+
 ## Referenced by
 
 - `resources/reference/INDEX.md` → Subtopic listing
