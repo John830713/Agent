@@ -1,8 +1,13 @@
 # Local tools
 
-Optional tool registrations — not part of the formal INDEX chain. Browse subdirectories for registered tools and their installation paths.
+Machine-specific tools — not shared across machines. Content varies per machine.
 
-| Directory | Description |
-|-----------|-------------|
-| `autoit-v3/` | AutoIt v3 — Windows GUI automation |
-| `msys2-portable/` | MSYS2 Portable — MinGW-w64 UCRT64 toolchain (g++, mingw32-make) |
+**Agent instruction**: read `.local-cache/tools.md` in the parent `resources/` directory for available tools. If the cache does not exist, run the scan tool to regenerate it.
+
+## Registration
+
+When a project provides a tool, create `INDEX.md` in a subdirectory here pointing back to the project's tool path. Then run:
+
+```powershell
+python D:\Agent\resources\tools\common\tool-registry\scan.py
+```
