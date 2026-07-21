@@ -91,6 +91,7 @@ Copy-Item -Recurse "D:\Agent\template\resources" "D:\Agent\resources"
 | Restart OpenCode | `D:\Agent\resources\tools\common\opencode\restart.ps1` |
 | Send message to self | `D:\Agent\resources\tools\common\opencode\send.ps1 -Text "msg"` |
 | OpenCode notes | `D:\Agent\resources\reference\opencode\` |
+| MSYS2/MinGW toolchain | `D:\Agent\resources\reference\toolchain\` |
 | Framework config | `D:\Agent\CONFIG/` |
 | Auto-check command | `.opencode/commands/auto-check.md` |
 
