@@ -38,10 +38,12 @@ Copy-Item -Recurse "D:\Agent\template\resources" "D:\Agent\resources"
 
 ### Safety rules
 
-- **`D:\Agent\` is read-only reference** — never modify any file under this directory
+- **`D:\Agent\` is read-only from sub-projects** — agents working in other projects (e.g. `D:\Tampermonkey`) must never modify files under `D:\Agent\`
+- **The agent working directly on `D:\Agent` may modify it** — but only with explicit user instruction or as part of a defined task
 - **Cross-path references are read-only** — writes go to the current project's `.agent/` directory only
 - **No random C:\ writes** — keep the filesystem clean
-- **New tools** go to `<project>/.agent/Tools/`, not `D:\Agent\resources/tools/`
+- **New tools for a project** go to `<project>/.agent/Tools/`, not `D:\Agent\resources/tools/`
+- **New tools for all machines** go to `D:\Agent\template/resources/tools/` (via git), not `D:\Agent\resources/tools/`
 
 ---
 
