@@ -20,16 +20,10 @@ This repo is a **framework of agent instructions**, not a software project. It d
 
 0. **Read pinned rules** — read `mneme://procedural` and treat all pinned items as binding rules for this session.
 1. **Read core navigation** — `INDEX.md`, `resources/INDEX.md`
-2. **Load INDEX chain** — run `chain_check.py` to sync with cache:
-   ```
-   python D:\Agent\resources\tools\common\chain-check\chain_check.py
-        --root D:\Agent --check
-   ```
-   If no cache exists (first run), use `--init` instead — this reads every INDEX.md in the chain and caches their hashes.
-3. **Read changed nodes** — for each `[MOD]` or `[NEW]` line from step 2, read the corresponding INDEX.md. On first run (`--init`) this means all nodes.
-4. **Execute agent instructions** — reference files may contain a `**Agent instruction**` block at the top (e.g. `mneme_pin`). Execute these immediately on first read. See `resources/reference/mneme/INDEX.md` for the protocol spec.
-5. `mneme.switch_scope("<project-name>")` — scope all memory writes to the active project
-6. Check `<project>/.agent/TASKS/` — pick up unfinished work
+2. **Read changed INDEX.md files** — scan `resources/` for directories with new or modified INDEX.md since last session.
+3. **Execute agent instructions** — reference files may contain a `**Agent instruction**` block at the top (e.g. `mneme_pin`). Execute these immediately on first read.
+4. `mneme.switch_scope("<project-name>")` — scope all memory writes to the active project
+5. Check `<project>/.agent/TASKS/` — pick up unfinished work
 
 If this is a **new machine**, copy the template resources first:
 ```powershell
@@ -53,24 +47,20 @@ Copy-Item -Recurse "D:\Agent\template\resources" "D:\Agent\resources"
 - If the operation has a matching reference doc (e.g., git → `resources/reference/git/`), **read that INDEX.md first** before acting
 - Reference INDEX.md files are already in context from the startup chain load — re-read only if context was lost
 
-### Git commits — pre-commit hook
-- The pre-commit hook at `.githooks/pre-commit` runs `chain_check.py --verify` automatically before every commit
-- This validates all INDEX.md forward/backward links — if it fails, the commit is blocked
-- Run `git config core.hooksPath .githooks` once per machine to enable the hook
-- To verify manually: `python D:\Agent\resources\tools\common\chain-check\chain_check.py --root D:\Agent --verify`
+### Git commits
+- Only commit when the user explicitly asks for it
+- Never commit secrets or credentials
+- Write concise commit messages describing the change
 
 ### Session end
 - **Check for pending changes** — run `git status D:\Agent`; if there are uncommitted changes, offer to commit
-- Run `chain_check.py --check` to refresh the cache so the next session picks up only what changed
 
 ---
 
 ## Gotchas
 
 - **`/resources/` is gitignored** — it is machine-local. Only `template/resources/` is tracked. New machines must seed from `template/resources/`.
-- **`chain_check.py --check` vs `--verify`** — `--check` hashes INDEX.md files and detects content changes (session start). `--verify` validates link integrity (pre-commit). Use the right one.
 - **mneme MCP server** — runs as a local process (`mneme.exe run`) with 120s timeout. Memory writes should go through `mneme_remember`/`mneme_pin`, not file edits.
-- **Git hooks must be enabled** — run `git config core.hooksPath .githooks` on a fresh clone.
 
 ---
 
@@ -78,6 +68,7 @@ Copy-Item -Recurse "D:\Agent\template\resources" "D:\Agent\resources"
 
 | Need | Path |
 |------|------|
+| Shared rules for all projects | `D:\Agent\SHARED_RULES.md` |
 | New machine seed | `Copy-Item -Recurse D:\Agent\template\resources D:\Agent\resources` |
 | Template source files | `D:\Agent\template/resources/` |
 | Tool entity files | `D:\Agent\resources/tools/` |
