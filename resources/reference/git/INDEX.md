@@ -9,7 +9,6 @@
 - Commit whenever changes exist — better to over-commit and squash later than to miss a submission
 - Split commits by feature: one logical change per commit
 - Write concise commit messages in English
-- Only commit what the user explicitly asks for
 - Never commit secrets or credentials
 
 ## Undoing
