@@ -1,0 +1,1 @@
+{"version": 1, "forward": ["chain-check/", "es/", "mneme/", "opencode/", "tool-registry/"], "referenced_by": [".."]}
