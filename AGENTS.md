@@ -27,7 +27,15 @@ This repo is a **framework of agent instructions**, not a software project. It d
 
 New machine:
 ```powershell
+# 1. Seed architecture from the git-tracked template — INDEX chain skeleton only
+#    (INDEX.md + .index.json, no tool scripts/binaries)
 Copy-Item -Recurse "D:\Agent\template\resources" "D:\Agent\resources"
+
+# 2. Verify common tools are provisioned; copy missing ones from a provisioned machine
+python D:\Agent\resources\tools\common\tool-registry\bootstrap.py --check
+
+# 3. Register machine-specific tools + rebuild the scan cache
+python D:\Agent\resources\tools\common\tool-registry\scan.py
 ```
 
 ### Safety rules
@@ -43,7 +51,7 @@ Copy-Item -Recurse "D:\Agent\template\resources" "D:\Agent\resources"
 
 ## Key gotchas
 
-- **`/resources/` is gitignored** — machine-local. Only `template/resources/` is tracked. New machines seed from `template/resources/`.
+- **`/resources/` is gitignored** — machine-local. Only `template/resources/` is tracked; the only `resources/` files still in git are pre-existing force-tracked tool binaries/scripts (e.g. `mneme.exe`). New machines seed from `template/resources/`, then run `bootstrap.py --check`.
 - **mneme** runs via MCP (`mneme.exe run`, 120s timeout). On Windows, daemon/client mode is unavailable (no Unix domain sockets). Each project must declare its own `mcp.mneme` in `opencode.json`.
 - **Pre-commit hook** (`.githooks\pre-commit`) runs `chain_check.py --verify` — INDEX chain must pass before any commit.
 
@@ -57,6 +65,7 @@ Copy-Item -Recurse "D:\Agent\template\resources" "D:\Agent\resources"
 | Restart OpenCode + mneme | `D:\Agent\resources\tools\common\opencode\restart.ps1` |
 | Send message to OpenCode | `D:\Agent\resources\tools\common\opencode\send.ps1 -Text "msg"` |
 | Rescan tool/skill/reference cache | `python D:\Agent\resources\tools\common\tool-registry\scan.py` |
+| Bootstrap check (common vs local) | `python ...tool-registry\bootstrap.py --check` |
 | Check INDEX chain for changes | `python ...chain-check\chain_check.py --check` |
 | Verify INDEX chain integrity | `python ...chain-check\chain_check.py --verify` |
 | Auto-check command | `.opencode/commands/auto-check.md` |
@@ -66,9 +75,9 @@ Reference structure (start at `resources/INDEX.md`, follow sub-INDEX.md files):
 |------|------|
 | Cross-project tools | `resources/tools/common/` — mneme, chain-check, opencode, es, tool-registry |
 | Machine-specific tools | `resources/tools/local/` — varies per machine |
-| Reference rules | `resources/reference/` — git, mneme, tool management, conventions, logs, tasks |
-| Skill files | `resources/skills/` |
-| New-machine seed | `template/resources/` (git-tracked) |
+| Reference rules | `resources/reference/` — git, mneme, tool management, conventions, logs, tasks (machine-local) |
+| Skill files | `resources/skills/` (machine-local) |
+| New-machine seed | `template/resources/` (git-tracked, architecture only — no binaries, no machine-specific topics) |
 
 ## Session end
 
