@@ -18,4 +18,5 @@ Write one file to `.agent/LOGS/YYYY-MM-DD.md` at session end:
 
 ## Referenced by
 
-- [reference/INDEX.md](../INDEX.md)
+- `resources/reference/INDEX.md` → Subtopic listing
+- `AGENTS.md` → Quick reference

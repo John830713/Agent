@@ -14,4 +14,5 @@
 
 ## Referenced by
 
-- [reference/INDEX.md](../INDEX.md)
+- `resources/reference/INDEX.md` → Subtopic listing
+- `AGENTS.md` → Quick reference

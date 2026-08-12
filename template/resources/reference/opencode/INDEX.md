@@ -47,13 +47,24 @@ Adjust the `Start-Sleep` seconds based on machine speed. 15-20s is typical.
 Use `send.ps1` to send a message to the OpenCode chat window programmatically.
 
 ```powershell
+# English message (direct text)
 powershell -NoProfile -ExecutionPolicy Bypass -File D:\Agent\resources\tools\common\opencode\send.ps1 -Text "your message"
+
+# Chinese/Unicode message (via file to avoid encoding loss)
+# 1. Write UTF-8 file first
+$utf8 = New-Object System.Text.UTF8Encoding $false
+$utf8.WriteAllText("C:\Temp\msg.txt", "繁體中文訊息")
+# 2. Send via file
+powershell -NoProfile -ExecutionPolicy Bypass -File D:\Agent\resources\tools\common\opencode\send.ps1 -FilePath "C:\Temp\msg.txt"
 ```
 
 - Uses clipboard paste (`Ctrl+V`) to bypass IME issues
+- For Unicode text use `-FilePath` to read from a UTF-8 file (avoids PowerShell CLI encoding loss)
 - Window title must match `"OpenCode"` exactly
 - For background triggers, combine with `Start-Process` and `Start-Sleep`
 
 ## Referenced by
 
-- [reference/INDEX.md](../INDEX.md)
+- `resources/reference/INDEX.md` → Subtopic listing
+- `resources/INDEX.md` → Tools section
+- `AGENTS.md` → Quick reference

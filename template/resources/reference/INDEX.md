@@ -16,13 +16,20 @@ python D:\Agent\resources\tools\common\tool-registry\scan.py
 
 | Path | Description |
 |------|-------------|
-| [design/](design/INDEX.md) | Tampermonkey UI pattern library |
-| [log/](log/INDEX.md) | Session log format |
+| [chain/](chain/INDEX.md) | INDEX chain specification |
 | [conventions/](conventions/INDEX.md) | File naming, data sync |
+| [design/](design/INDEX.md) | UI pattern library |
 | [git/](git/INDEX.md) | Git commit rules, workflow, safety |
+| [log/](log/INDEX.md) | Session log format |
 | [mneme/](mneme/INDEX.md) | Mneme capacity, scope, session flow |
 | [opencode/](opencode/INDEX.md) | OpenCode app rules, restart, send-to-self |
-| [chain/](chain/INDEX.md) | INDEX chain specification |
+| [result-archive/](result-archive/INDEX.md) | Result archive format and location |
+| [task/](task/INDEX.md) | Task file format |
+| [tool/](tool/INDEX.md) | Tool management, registration, tracking |
+
+> Template only carries framework-generic topics. Machine-specific topics
+> (e.g. `llama/`, `toolchain/`, project references) stay in the machine's own
+> `resources/reference/` and are never copied into `template/`.
 
 ## Referenced by
 

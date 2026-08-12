@@ -1,5 +1,12 @@
 # mneme — Rules & Notes
 
+## Quick facts
+
+- Binary: `D:\Agent\resources\tools\common\mneme\mneme.exe`
+- Data dir: `~/.mneme/`
+- Project isolation: use `switch_scope("<project-name>")`
+- Cross-session memory: `remember` / `recall` / `pin`
+
 ## Capacity
 
 - Target under 500 characters per memory
@@ -18,6 +25,29 @@
 - `switch_scope("<project>")` separates memories per project
 - Default scope is `global` — always switch before writing
 - Writes without scope filter land in the active scope
+
+## Windows limitation
+
+Daemon/client mode (`mneme daemon` + `mneme client`) is **not available on Windows** — the daemon transport requires Unix domain sockets; Windows named-pipe support is planned for M4. On Windows, always use `mneme run`.
+
+## Multi-project setup (Windows)
+
+OpenCode 內建多專案模式中，切換專案時 MCP 連線會中斷。加上 mneme daemon/client 在 Windows 不支援，**每個專案必須各自宣告 `mcp.mneme`**：
+
+```json
+{
+  "mcp": {
+    "mneme": {
+      "command": ["D:\\Agent\\resources\\tools\\common\\mneme\\mneme.exe", "run"],
+      "enabled": true,
+      "type": "local",
+      "timeout": 120000
+    }
+  }
+}
+```
+
+這樣至少在同一個專案內關閉重開後 MCP 會正常運作。
 
 ## Data directory
 
@@ -49,4 +79,6 @@ Rules:
 
 ## Referenced by
 
-- [reference/INDEX.md](../INDEX.md)
+- `resources/reference/INDEX.md` → Subtopic listing
+- `resources/INDEX.md` → Tools section
+- `AGENTS.md` → Quick reference
