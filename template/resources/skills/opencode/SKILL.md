@@ -1,3 +1,8 @@
+---
+name: opencode
+description: Operate the OpenCode desktop app — restart after config or custom-tool changes, send messages to the chat window via send.ps1.
+---
+
 # OpenCode
 
 OpenCode 桌面應用程式的操作技能。

@@ -1,3 +1,8 @@
+---
+name: mneme
+description: Cross-session persistent memory for facts, decisions, preferences, and events via the mneme MCP server — remember, recall, pin procedural rules, record/query events, with per-project scope isolation.
+---
+
 # Mneme — Persistent Memory
 
 Cross-session semantic memory for facts, decisions, preferences, and events.

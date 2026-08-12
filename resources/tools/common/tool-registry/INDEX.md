@@ -79,7 +79,7 @@ D:\SomeProject\tools\my-tool\run.ps1 -Arg value
 ## Notes
 
 - Only directories with `INDEX.md` are registered as tools
-- Skills are `.md` files directly under `skills/` (excluding `INDEX.md`)
+- Skills are folders under `skills/` containing `SKILL.md` (Agent Skills format, YAML frontmatter `name` + `description`)
 - Reference topics are subdirectories under `reference/` with `INDEX.md`
 - Requires Python 3.6+
 

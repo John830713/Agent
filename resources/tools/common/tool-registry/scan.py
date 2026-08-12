@@ -46,20 +46,36 @@ def scan_tools(root: Path):
 
 
 def scan_skills(root: Path):
-    """Scan skills/ for .md skill files (excluding INDEX.md)."""
+    """Scan skills/ for Agent Skills (a folder per skill containing SKILL.md).
+
+    Falls back to legacy flat .md files directly under skills/ (excluding INDEX.md).
+    """
     skills_dir = root / "skills"
     entries = []
     if not skills_dir.is_dir():
         return entries
 
-    for f in sorted(skills_dir.iterdir()):
-        if f.suffix == ".md" and f.name != "INDEX.md":
-            desc = _read_first_heading(f)
+    for d in sorted(skills_dir.iterdir()):
+        if not d.is_dir():
+            continue
+        skill = d / "SKILL.md"
+        if skill.exists():
+            fm = _read_frontmatter(skill)
             entries.append({
-                "name": f.stem,
-                "description": desc,
-                "path": str(f),
+                "name": fm.get("name") or d.name,
+                "description": fm.get("description") or _read_first_heading(skill),
+                "path": str(skill),
             })
+
+    # Legacy fallback: flat *.md skill files
+    if not entries:
+        for f in sorted(skills_dir.iterdir()):
+            if f.suffix == ".md" and f.name != "INDEX.md":
+                entries.append({
+                    "name": f.stem,
+                    "description": _read_first_heading(f),
+                    "path": str(f),
+                })
     return entries
 
 
@@ -95,6 +111,35 @@ def _read_first_heading(filepath: Path):
     except Exception:
         pass
     return filepath.parent.name
+
+
+def _read_frontmatter(filepath: Path):
+    """Parse minimal YAML frontmatter (--- delimited) from a markdown file.
+
+    Returns a dict of key -> value for top-level scalar keys (e.g. name, description).
+    """
+    fm = {}
+    try:
+        with open(filepath, "r", encoding="utf-8") as f:
+            lines = f.read().splitlines()
+        if not lines or lines[0].strip() != "---":
+            return fm
+        end = None
+        for i in range(1, len(lines)):
+            if lines[i].strip() == "---":
+                end = i
+                break
+        if end is None:
+            return fm
+        for line in lines[1:end]:
+            line = line.strip()
+            if not line or line.startswith("#") or ":" not in line:
+                continue
+            key, _, value = line.partition(":")
+            fm[key.strip()] = value.strip().strip("'\"")
+    except Exception:
+        pass
+    return fm
 
 
 def write_cache(cache_dir: Path, filename: str, entries: list, category: str):
