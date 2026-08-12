@@ -9,13 +9,33 @@ Usage:
   python chain_check.py --root <path>   Root directory (default: .)
 """
 
-import argparse, hashlib, json, os, subprocess, sys
+import argparse, hashlib, json, os, re, subprocess, sys
 from datetime import datetime, timezone
 from pathlib import Path
 
 
-CACHE_FILE = os.path.expanduser("~/.opencode/chain-cache.json")
+LEGACY_CACHE_FILE = os.path.expanduser("~/.opencode/chain-cache.json")
 CACHE_VERSION = 1
+
+
+def cache_file_for(root_abs):
+    """Return the cache file for a root.
+
+    Uses the legacy single cache file when its stored root matches the
+    requested root (preserves D:\\Agent behavior). Any other root gets its own
+    per-root cache so checking sub-projects never collides with or clobbers
+    the framework cache.
+    """
+    if os.path.exists(LEGACY_CACHE_FILE):
+        try:
+            with open(LEGACY_CACHE_FILE, "r", encoding="utf-8") as f:
+                stored_root = json.load(f).get("root")
+            if stored_root and os.path.normcase(os.path.abspath(stored_root)) == os.path.normcase(root_abs):
+                return LEGACY_CACHE_FILE
+        except Exception:
+            pass
+    safe = re.sub(r"[^A-Za-z0-9_-]", "_", os.path.normcase(os.path.abspath(root_abs)))
+    return os.path.expanduser(f"~/.opencode/chain-cache-{safe}.json")
 
 
 def find_nodes(root):
@@ -70,6 +90,7 @@ def scan_node_hashes(root, nodes):
 def do_init(root):
     """Build initial cache and write to file."""
     root_abs = os.path.abspath(root)
+    cache_file = cache_file_for(root_abs)
     nodes = find_nodes(root_abs)
     if not nodes:
         print(f"No .index.json found under {root_abs}")
@@ -83,22 +104,24 @@ def do_init(root):
         "nodes": hashes
     }
 
-    os.makedirs(os.path.dirname(CACHE_FILE), exist_ok=True)
-    with open(CACHE_FILE, "w", encoding="utf-8") as f:
+    os.makedirs(os.path.dirname(cache_file), exist_ok=True)
+    with open(cache_file, "w", encoding="utf-8") as f:
         json.dump(cache, f, indent=2, ensure_ascii=False)
 
     print(f"[OK] Init complete - {len(hashes)} nodes cached")
-    print(f"     Cache: {CACHE_FILE}")
+    print(f"     Cache: {cache_file}")
     print(f"     Root:  {root_abs}")
 
 
 def do_check(root):
     """Compare current hashes with cache, report changes."""
-    if not os.path.exists(CACHE_FILE):
-        print("[ERR] No cache found. Run --init first.")
+    root_abs = os.path.abspath(root)
+    cache_file = cache_file_for(root_abs)
+    if not os.path.exists(cache_file):
+        print(f"[ERR] No cache found for {root_abs}. Run --init first.")
         sys.exit(1)
 
-    with open(CACHE_FILE, "r") as f:
+    with open(cache_file, "r") as f:
         cache = json.load(f)
 
     if cache.get("version") != CACHE_VERSION:
@@ -132,7 +155,7 @@ def do_check(root):
     # Update cache
     cache["updated"] = datetime.now(timezone.utc).isoformat()
     cache["nodes"] = current
-    with open(CACHE_FILE, "w", encoding="utf-8") as f:
+    with open(cache_file, "w", encoding="utf-8") as f:
         json.dump(cache, f, indent=2, ensure_ascii=False)
 
     print(f"[OK]  {len(unchanged)} unchanged")

@@ -32,7 +32,8 @@ Agent reads the `[MOD]` and `[NEW]` lines and reads only those files.
 
 ## Notes
 
-- Cache stored in `~/.opencode/chain-cache.json` — machine-local, not in git
+- Cache is per-root: `~/.opencode/chain-cache.json` for `D:\Agent`, `~/.opencode/chain-cache-<sanitized-root>.json` for sub-projects — machine-local, not in git
+- Running `--check` on a sub-project root (e.g. `D:\EXE_decompilation`) never touches the framework cache
 - Hash uses `git hash-object` — same content = same hash across machines
 - Requires Python 3.6+ and `git` on PATH
 
